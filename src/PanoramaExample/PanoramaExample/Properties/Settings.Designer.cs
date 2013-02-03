@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MahApps.PanoramaExample.Properties
+namespace MahApps.Metro.PanoramaExample.Properties
 {
 
 

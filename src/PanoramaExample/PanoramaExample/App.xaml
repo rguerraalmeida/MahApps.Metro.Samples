@@ -1,7 +1,7 @@
-﻿<Application x:Class="MahApps.PanoramaExample.App"
+﻿<Application x:Class="MahApps.Metro.PanoramaExample.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainWindow.xaml">
+             StartupUri="ShellView.xaml">
     <Application.Resources>
          
     </Application.Resources>
