@@ -1,8 +1,12 @@
-﻿<Window x:Class="MahApps.PanoramaExample.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+﻿<controls:MetroWindow x:Class="MahApps.PanoramaExample.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      Title="Panorama Sample" 
+                      WindowStartupLocation="CenterScreen"
+                      Height="350" 
+                      Width="525">
     <Grid>
-        
+
     </Grid>
-</Window>
+</controls:MetroWindow>
