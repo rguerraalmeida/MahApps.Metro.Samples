@@ -11,7 +11,7 @@ namespace MahApps.Metro.PanoramaExample
         public ReactiveCollection<Genre> Genres { get; set; }
 
         public ReactiveCollection<PanoramaGroup> Groups { get; set; }
-        public bool Busy { get; set; }
+        
         public string Title { get; set; }
         public int SelectedIndex { get; set; }
         public ReactiveCollection<Album> Albums { get; set; }
@@ -22,8 +22,6 @@ namespace MahApps.Metro.PanoramaExample
 
         public ShellViewModel()
         {
-            Busy = true;
-
             Genres = new ReactiveCollection<Genre>(Data.Genres);
             Albums = new ReactiveCollection<Album>(Data.Albums);
             Artists = new ReactiveCollection<Artist>(Data.Artists);
@@ -35,11 +33,6 @@ namespace MahApps.Metro.PanoramaExample
 
             artists.SetSource(Data.Artists.Take(25));
             albums.SetSource(Data.Albums.Take(25));
-
-            Busy = false;
-
-            
-            
         }
     }
 }
