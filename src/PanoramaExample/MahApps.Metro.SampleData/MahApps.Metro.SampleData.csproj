@@ -39,11 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Album.cs" />
-    <Compile Include="Artist.cs" />
-    <Compile Include="Genre.cs" />
+    <Compile Include="MusicStore\Album.cs" />
+    <Compile Include="MusicStore\Artist.cs" />
+    <Compile Include="MusicStore\Genre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SampleData.cs" />
+    <Compile Include="MusicStore\SampleData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

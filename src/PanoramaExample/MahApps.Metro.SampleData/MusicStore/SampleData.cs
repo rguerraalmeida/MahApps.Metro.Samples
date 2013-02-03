@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace MahApps.Metro.SampleData
+namespace MahApps.Metro.SampleData.MusicStore
 {
     public static class SampleData
     {

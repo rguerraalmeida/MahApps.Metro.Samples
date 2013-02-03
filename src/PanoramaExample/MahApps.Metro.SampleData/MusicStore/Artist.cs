@@ -1,4 +1,4 @@
-﻿namespace MahApps.Metro.SampleData
+﻿namespace MahApps.Metro.SampleData.MusicStore
 {
     public class Artist
     {

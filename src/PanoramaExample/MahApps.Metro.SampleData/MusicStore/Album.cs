@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace MahApps.Metro.SampleData
+namespace MahApps.Metro.SampleData.MusicStore
 {
     public class Album
     {

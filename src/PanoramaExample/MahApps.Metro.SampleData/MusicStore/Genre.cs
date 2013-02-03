@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MahApps.Metro.SampleData
+namespace MahApps.Metro.SampleData.MusicStore
 {
     public class Genre
     {
