@@ -13,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GrayscaleEffect">
-      <HintPath>..\..\..\lib\GrayscaleEffect.dll</HintPath>
+      <HintPath>..\..\lib\GrayscaleEffect.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro">
       <HintPath>..\packages\MahApps.Metro.0.10.1.21-ALPHA\lib\net40\MahApps.Metro.dll</HintPath>
@@ -150,7 +152,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MahApps.Metro.SampleData\MahApps.Metro.SampleData.csproj">
+    <ProjectReference Include="..\SampleData\MahApps.Metro.SampleData.csproj">
       <Project>{2553A2F3-9FF5-43FB-9C23-C413AF95EBC8}</Project>
       <Name>MahApps.Metro.SampleData</Name>
     </ProjectReference>
@@ -160,6 +162,7 @@
     <Resource Include="images\placeholder_person.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.0-rc\tools\Microsoft.Bcl.Build.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -168,5 +171,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <Import Project="$(ProjectDir)\..\Tools\Fody\Fody.targets" />
+  <!--<Import Project="$(ProjectDir)\..\Tools\Fody\Fody.targets" />-->
 </Project>
