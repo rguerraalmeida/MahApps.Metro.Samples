@@ -39,6 +39,9 @@
     <Reference Include="MahApps.Metro">
       <HintPath>..\packages\MahApps.Metro.0.10.1.33-ALPHA\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
+    <Reference Include="PropertyChanged">
+      <HintPath>..\packages\PropertyChanged.Fody.1.35.0.0\lib\NET40\PropertyChanged.dll</HintPath>
+    </Reference>
     <Reference Include="ReactiveUI_Net45">
       <HintPath>..\packages\reactiveui-core.4.3.0\lib\net45\ReactiveUI_Net45.dll</HintPath>
     </Reference>
@@ -70,6 +73,7 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <None Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -133,4 +137,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Import Project="$(ProjectDir)\..\Tools\Fody\Fody.targets" />
 </Project>

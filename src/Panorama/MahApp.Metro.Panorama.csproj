@@ -172,4 +172,5 @@
   </Target>
   -->
   <!--<Import Project="$(ProjectDir)\..\Tools\Fody\Fody.targets" />-->
+  <Import Project="$(ProjectDir)\..\Tools\Fody\Fody.targets" />
 </Project>
