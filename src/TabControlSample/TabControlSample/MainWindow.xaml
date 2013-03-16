@@ -44,64 +44,66 @@
                         </Grid.ColumnDefinitions>
 
                         <Label Content="Button"
-                               VerticalAlignment="Top"
+                               VerticalAlignment="Center"
                                HorizontalAlignment="Right" />
 
                         <Button Content="Button" 
+                                Margin="5"
                                 Grid.Column="1"
                                 VerticalAlignment="Bottom" 
                                 Style="{DynamicResource SquareButtonStyle}"/>
 
                         <Label Content="Toggle Button"
                                Grid.Row="1"
-                               VerticalAlignment="Top"
+                               VerticalAlignment="Center"
                                HorizontalAlignment="Right" />
 
                         <ToggleButton Content="click me" 
                                       Grid.Row="1"
                                       Grid.Column="1"
-                                      
-                                      VerticalAlignment="Top" />
+                                      Margin="5" />
 
                         <Label Content="TextBox"
-                                       VerticalAlignment="Top"
+                                       VerticalAlignment="Center"
                                        Grid.Row="2"
-                                       HorizontalAlignment="Left" />
+                                       HorizontalAlignment="Right" />
 
                         <TextBox Text="Hi"
                                  controls:TextboxHelper.Watermark="Enter Username"
                                  controls:TextboxHelper.ClearTextButton="True"
+                                 Margin="5"
                                  Grid.Row="2"
                                  Grid.Column="1" />
 
-                        <Label Content="Passwordbox"
+                        <Label Content="PasswordBox"
                                Grid.Row="3"
-                               VerticalAlignment="Top"
-                               HorizontalAlignment="Left" />
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right" />
 
                         <PasswordBox controls:TextboxHelper.Watermark="Enter Password"
                                      controls:TextboxHelper.ClearTextButton="True"
+                                     Margin="5"
                                      Grid.Row="3"
                                      Grid.Column="1"
                                      VerticalContentAlignment="Center" />
 
                         <Label Content="Checkbox"
                                Grid.Row="4"
-                               HorizontalAlignment="Left"
-                               VerticalAlignment="Top" />
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Center" />
 
                         <CheckBox Content="Ignore Taskbar on maximize"
                                   Grid.Column="1"
                                   Grid.Row="4"
-                                  VerticalAlignment="Top"
-                                  HorizontalAlignment="Right"  />
+                                  VerticalAlignment="Center"
+                                  Margin="5" />
 
                         <Label Content="Radio Buttons"
-                               VerticalAlignment="Top"
+                               VerticalAlignment="Center"
                                Grid.Row="5"
-                               HorizontalAlignment="Left" />
+                               HorizontalAlignment="Right" />
 
-                        <StackPanel Grid.Row="5" Grid.Column="1">
+                        <StackPanel Grid.Row="5" Grid.Column="1" Margin="5">
                             <RadioButton Content="Radio Button 1"
                                          VerticalAlignment="Top"
                                          GroupName="test"
@@ -114,12 +116,14 @@
                         </StackPanel>
 
                         <Label Content="Combobox"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Center"
                                Grid.Row="6" />
 
                         <ComboBox Grid.Row="6" 
                                   Grid.Column="1"
-                                  VerticalAlignment="Top"
-                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Center"
+                                  Margin="5"
                                   SelectedIndex="0">
                             <ComboBoxItem Content="ComboBoxItem" />
                             <ComboBoxItem Content="ComboBoxItem" />
@@ -127,76 +131,74 @@
                         </ComboBox>
 
                         <Label Content="Progress Bar"
-                               VerticalAlignment="Top"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
                                Grid.Row="7" />
 
-                        <ProgressBar x:Name="pb"
-                                     Grid.Row="7"
+                        <ProgressBar Grid.Row="7"
                                      Grid.Column="1"
-                                     Value="{Binding Value, ElementName=slider1}"
-                                     IsIndeterminate="False"
+                                     IsIndeterminate="True"
                                      Width="154" />
-
-                        <Label Content="Slider"
-                               Grid.Row="8" />
-
-
-                        <Slider Height="19" 
-                                HorizontalAlignment="Stretch" 
-                                Grid.Row="8"
-                                Grid.Column="1"
-                                Name="slider1" 
-                                Maximum="100" 
-                                Value="25" />
                     </Grid>
                     
-                    <WrapPanel Grid.Column="1">
+                    <Grid Grid.Column="1">
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
 
-                        <controls:ProgressRing IsActive="True"/>
+                        <Label Content="ProgressRing"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Center" />
 
-                        <controls:TransitioningContentControl x:Name="transitioning" 
-                                                              Width="250" 
-                                                              Height="50" 
-                                                              Transition="DownTransition" />
+                        <controls:ProgressRing IsActive="True" Grid.Column="1" />
 
+                        <Label Content="RangeSlider"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Center" Grid.Row="1" />
 
-                        <controls:TransitioningContentControl x:Name="customTransitioning"
-                                                                  Width="250"
-                                                                  Height="50"
-                                                                  Transition="CustomTransition">
-                            <controls:TransitioningContentControl.CustomVisualStates>
-                                <VisualState x:Name="CustomTransition">
-                                    <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                           Storyboard.TargetName="CurrentContentPresentationSite"
-                                                                           Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <SplineDoubleKeyFrame KeyTime="00:00:00"
-                                                                      Value="0" />
-                                            <SplineDoubleKeyFrame KeyTime="00:00:00.700"
-                                                                      Value="1" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                           Storyboard.TargetName="PreviousContentPresentationSite"
-                                                                           Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <SplineDoubleKeyFrame KeyTime="00:00:00"
-                                                                      Value="1" />
-                                            <SplineDoubleKeyFrame KeyTime="00:00:00.700"
-                                                                      Value="0" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                            </controls:TransitioningContentControl.CustomVisualStates>
-                        </controls:TransitioningContentControl>
-                        <controls:RangeSlider Width="227" Height="25" RangeStartSelected="20" RangeStopSelected="50"/>
-                        <Slider Orientation="Vertical" Value="{Binding ElementName=pb, Path=Value}" Height="150" Margin="20" Name="slider2" VerticalAlignment="Top" Maximum="100" />
-                    </WrapPanel>
+                        <controls:RangeSlider Margin="5"
+                                              Grid.Row="1" 
+                                              Grid.Column="1" 
+                                              RangeStartSelected="20" 
+                                              RangeStopSelected="50"/>
+
+                        <Label Content="Slider"
+                               Grid.Row="2"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Center" />
+
+                        <Slider Grid.Row="2"
+                                Grid.Column="1"
+                                Margin="5"
+                                Value="5"
+                                SmallChange="0.5" />
+
+                        <Label Content="Slider (vertical)"
+                               Grid.Row="3"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Center" />
+
+                        <Slider Orientation="Vertical" 
+                                Value="20"
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Height="150" 
+                                Margin="5" 
+                                VerticalAlignment="Top" 
+                                Maximum="100" />
+                    </Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="_Second Tab Item">
                 <StackPanel>
-                    <controls:ProgressIndicator ProgressColour="{StaticResource AccentColorBrush}"
-                                                    Height="6"
-                                                    Width="600" />
                     <controls:ToggleSwitch 
                             
                             HorizontalAlignment="Left" 
@@ -204,12 +206,6 @@
                             Height="75" 
                             Margin="0,10,0,0"
                             Header="WiFi rest state" />
-                    <Slider Margin="0,10,0,0"
-                                HorizontalAlignment="Left"
-                                Width="261.667"
-                                Value="5"
-                                SmallChange="0.5" />
-
                     <TextBlock Text="ComboBox Binding scenario" />
                     <ComboBox ItemsSource="{Binding Artists}"
                                   
