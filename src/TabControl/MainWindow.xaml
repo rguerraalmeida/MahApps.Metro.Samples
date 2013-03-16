@@ -2,9 +2,13 @@
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:tabControlSample="clr-namespace:TabControlSample"
+                      mc:Ignorable="d"
                       Title="Toolbar Demo" 
-                      Height="600" 
-                      Width="600">
+                      Height="480" 
+                      Width="600" d:DataContext="{d:DesignInstance tabControlSample:ShellViewModel}">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -197,28 +201,33 @@
                     </Grid>
                 </Grid>
             </TabItem>
+            
             <TabItem Header="_Second Tab Item">
                 <StackPanel>
-                    <controls:ToggleSwitch 
-                            
-                            HorizontalAlignment="Left" 
-                            Width="150" 
-                            Height="75" 
-                            Margin="0,10,0,0"
-                            Header="WiFi rest state" />
+                    <controls:ToggleSwitch HorizontalAlignment="Left" 
+                                           Width="150" 
+                                           Height="75" 
+                                           Margin="0,10,0,0"
+                                           Header="Toggle Switch State" />
+                    
                     <TextBlock Text="ComboBox Binding scenario" />
+                    
                     <ComboBox ItemsSource="{Binding Artists}"
-                                  
-                                  MaxDropDownHeight="100"
-                                  DisplayMemberPath="Name" />
+                              MaxDropDownHeight="100"
+                              DisplayMemberPath="Name" />
 
                     <TextBlock Text="Editable ComboBox Binding scenario" />
+                    
                     <ComboBox ItemsSource="{Binding Albums}"
-                                  controls:TextboxHelper.Watermark="watermark"
-                                  MaxDropDownHeight="50"
-                                  DisplayMemberPath="Title" IsEditable="True" Text="{Binding Path=Title, Mode=TwoWay}" IsReadOnly="False" />
+                              controls:TextboxHelper.Watermark="watermark"
+                              MaxDropDownHeight="50"
+                              DisplayMemberPath="Title" 
+                              IsEditable="True" 
+                              Text="{Binding Path=Title, Mode=TwoWay}" 
+                              IsReadOnly="False" />
 
                     <TextBlock Text="Items specified in xaml scenario" />
+                    
                     <ComboBox>
                         <ComboBox.Items>
                             <ComboBoxItem Content="Test" />
