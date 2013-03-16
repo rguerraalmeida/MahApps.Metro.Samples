@@ -13,7 +13,7 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -22,122 +22,135 @@
         <TabControl>
             <TabItem Header="_First Tab Item">
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
                     <Grid>
-                        <Button Content="Right Click Me"
-                                Height="30"
-                                ToolTip="This is a tooltip"
-                                Margin="88.694,0,0,0"
-                                VerticalAlignment="Top"
-                                HorizontalAlignment="Left"
-                                Width="154.002" />
-                        
-                        <PasswordBox controls:TextboxHelper.Watermark="Enter Password"
-                                     controls:TextboxHelper.ClearTextButton="True"
-                                     Margin="88.695,66.96,0,0"
-                                     VerticalAlignment="Top"
-                                     HorizontalAlignment="Left"
-                                     Width="154.001"
-									VerticalContentAlignment="Center" />
-                        
-                        <CheckBox Content="Ignore Taskbar on maximize"
-                                          Margin="88.695,100.96,0,0"
-                                          VerticalAlignment="Top"
-                                          HorizontalAlignment="Left"  />
-                        
-                        <RadioButton Content="Radio Button 1"
-                                             Margin="88.291,134.92,0,0"
-                                             VerticalAlignment="Top"
-                                             GroupName="test"
-                                             HorizontalAlignment="Left" />
-                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Content="Button"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Right" />
+
+                        <Button Content="Button" 
+                                Grid.Column="1"
+                                VerticalAlignment="Bottom" 
+                                Style="{DynamicResource SquareButtonStyle}"/>
+
+                        <Label Content="Toggle Button"
+                               Grid.Row="1"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Right" />
+
+                        <ToggleButton Content="click me" 
+                                      Grid.Row="1"
+                                      Grid.Column="1"
+                                      
+                                      VerticalAlignment="Top" />
+
+                        <Label Content="TextBox"
+                                       VerticalAlignment="Top"
+                                       Grid.Row="2"
+                                       HorizontalAlignment="Left" />
+
                         <TextBox Text="Hi"
                                  controls:TextboxHelper.Watermark="Enter Username"
                                  controls:TextboxHelper.ClearTextButton="True"
-                                 Margin="88.694,36.96,0,0"
-                                 VerticalAlignment="Top"
-                                 HorizontalAlignment="Left"
-                                 Width="154.002"
-								VerticalContentAlignment="Center" />
-                        
-                        <ComboBox Margin="88.292,176.84,0,0"
-                                          VerticalAlignment="Top"
-                                          HorizontalAlignment="Left"
-                                          SelectedIndex="0">
+                                 Grid.Row="2"
+                                 Grid.Column="1" />
+
+                        <Label Content="Passwordbox"
+                               Grid.Row="3"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Left" />
+
+                        <PasswordBox controls:TextboxHelper.Watermark="Enter Password"
+                                     controls:TextboxHelper.ClearTextButton="True"
+                                     Grid.Row="3"
+                                     Grid.Column="1"
+                                     VerticalContentAlignment="Center" />
+
+                        <Label Content="Checkbox"
+                               Grid.Row="4"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top" />
+
+                        <CheckBox Content="Ignore Taskbar on maximize"
+                                  Grid.Column="1"
+                                  Grid.Row="4"
+                                  VerticalAlignment="Top"
+                                  HorizontalAlignment="Right"  />
+
+                        <Label Content="Radio Buttons"
+                               VerticalAlignment="Top"
+                               Grid.Row="5"
+                               HorizontalAlignment="Left" />
+
+                        <StackPanel Grid.Row="5" Grid.Column="1">
+                            <RadioButton Content="Radio Button 1"
+                                         VerticalAlignment="Top"
+                                         GroupName="test"
+                                         HorizontalAlignment="Left" />
+
+                            <RadioButton Content="Radio Button 2"
+                                         VerticalAlignment="Top"
+                                         GroupName="test"
+                                         HorizontalAlignment="Left" />
+                        </StackPanel>
+
+                        <Label Content="Combobox"
+                               Grid.Row="6" />
+
+                        <ComboBox Grid.Row="6" 
+                                  Grid.Column="1"
+                                  VerticalAlignment="Top"
+                                  HorizontalAlignment="Left"
+                                  SelectedIndex="0">
                             <ComboBoxItem Content="ComboBoxItem" />
                             <ComboBoxItem Content="ComboBoxItem" />
                             <ComboBoxItem Content="ComboBoxItem" />
                         </ComboBox>
 
-                        <ProgressBar x:Name="pb"
-                                             Value="{Binding Value, ElementName=slider1}"
-                                             IsIndeterminate="False"
-                                             Margin="88.696,216.8,0,0"
-                                             VerticalAlignment="Top"
-                                             HorizontalAlignment="Left"
-                                             Width="154" />
-
-                        <Label Content="Button"
-                                       VerticalAlignment="Top"
-                                       Margin="39.07,0,0,0"
-                                       HorizontalAlignment="Left" />
-
-                        <Label Content="Passwordbox"
-                                       Margin="5.147,71,0,0"
-                                       RenderTransformOrigin="0.535,-0.381"
-                                       VerticalAlignment="Top"
-                                       HorizontalAlignment="Left" />
-
-                        <Label Content="Checkbox"
-                                       Margin="23.1,96.96,0,0"
-                                       HorizontalAlignment="Left"
-                                       Height="25.96"
-                                       VerticalAlignment="Top" />
-
-                        <Label Content="Radio Buttons"
-                                       VerticalAlignment="Top"
-                                       Margin="0.404,126.92,0,0"
-                                       HorizontalAlignment="Left" />
-
-                        <Label Content="TextBox"
-                                       VerticalAlignment="Top"
-                                       Margin="33.14,37,0,0"
-                                       HorizontalAlignment="Left" />
-
-                        <Label Content="Combobox"
-                                       VerticalAlignment="Top"
-                                       Margin="16.224,170.84,0,0"
-                                       HorizontalAlignment="Left" />
-
-                        <RadioButton Content="Radio Button 2"
-                                             Margin="88.695,155.88,0,0"
-                                             VerticalAlignment="Top"
-                                             GroupName="test"
-                                             HorizontalAlignment="Left" />
-
                         <Label Content="Progress Bar"
-                                       VerticalAlignment="Top"
-                                       Margin="8.216,206.8,0,0"
-                                       HorizontalAlignment="Left" />
+                               VerticalAlignment="Top"
+                               Grid.Row="7" />
 
-                        <Button Content="Button" 
-                                VerticalAlignment="Bottom" 
-                                Margin="88,0,90,8" 
-                                Style="{DynamicResource SquareButtonStyle}"/>
+                        <ProgressBar x:Name="pb"
+                                     Grid.Row="7"
+                                     Grid.Column="1"
+                                     Value="{Binding Value, ElementName=slider1}"
+                                     IsIndeterminate="False"
+                                     Width="154" />
 
-                        <ToggleButton Content="TOGGLE BUTTON" 
-                                      Margin="88,330,90,0" 
-                                      VerticalAlignment="Top" />
+                        <Label Content="Slider"
+                               Grid.Row="8" />
+
 
                         <Slider Height="19" 
-                                HorizontalAlignment="Right" 
-                                Margin="0,239,91,0" 
+                                HorizontalAlignment="Stretch" 
+                                Grid.Row="8"
+                                Grid.Column="1"
                                 Name="slider1" 
-                                VerticalAlignment="Top" 
-                                Width="154" 
                                 Maximum="100" 
                                 Value="25" />
                     </Grid>
-                    <WrapPanel Margin="332.001,0,0,8">
+                    
+                    <WrapPanel Grid.Column="1">
 
                         <controls:ProgressRing IsActive="True"/>
 
